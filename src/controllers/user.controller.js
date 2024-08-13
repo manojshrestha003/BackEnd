@@ -66,6 +66,20 @@ const avatar = await uploadOnCloudinary(avatarLocalPath);
   new ApiResponse(200, createdUser, "User registered successfully ")
  )
 
+ 
 })
+const loginUser = AsyncHandler( async (req, res)=>{
+  //req body  -> data
+  //username or  email
+  //find the user  
+  //password check 
+  //access and refresh token 
+  //send cookie 
+  const {email, username, password} = req.body 
+  if(!username || !email){
+    throw new ApiError(400, "username or Email  is required ")
+  }
+  
+  })
 
-export { registerUser}
+export { registerUser, loginUser }
