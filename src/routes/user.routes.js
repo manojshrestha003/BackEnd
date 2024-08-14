@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { registerUser } from "../controllers/user.controller.js";
+import { loginUser, logoutUser, registerUser } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/Multer.middleware.js";
 
 
@@ -20,6 +20,9 @@ router.route("/register").post(
     registerUser
 );
 
+router.route("/login").post(loginUser)
 
+//secured routes 
+router.route("/logout").post(logoutUser)
 
 export default router
