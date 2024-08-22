@@ -1,10 +1,10 @@
 
-import {ApiError} from "../utils/ApiError.js"
+import {ApiError} from "../utils/ApiError.js";
 import { AsyncHandler } from "../utils/AsyncHandler.js";
-import {User} from "../models/User.model.js"
-import  {uploadOnCloudinary} from "../utils/Cloudinary.js"
+import {User} from "../models/User.model.js";
+import  {uploadOnCloudinary} from "../utils/Cloudinary.js";
 import { ApiResponse } from "../utils/ApiReponse.js";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 const generateAccessAndGenerateTokens  = async (userId)=>{
   try {
@@ -315,11 +315,12 @@ const loginUser = AsyncHandler( async (req, res)=>{
 
 
   
-export { registerUser, 
+export {
+  registerUser, 
   loginUser, logoutUser, 
   refreshAccessToken ,
   chageCurrentUserPassword,
-   getCurrentuser,
+  getCurrentuser,
   updateAccountDetails ,
   updateUserAvatar,
   updateCoverImage
