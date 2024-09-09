@@ -231,6 +231,7 @@ const loginUser = AsyncHandler( async (req, res)=>{
     res.status(200)
     .json(200, req.user, "current user fetched successfully ")
   })
+//aggregation 
 
   const updateAccountDetails = AsyncHandler(async(req, res)=>{
     const {fullname, email} = req.body
