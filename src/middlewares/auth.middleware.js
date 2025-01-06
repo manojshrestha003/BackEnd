@@ -3,7 +3,6 @@ import { AsyncHandler } from "../utils/AsyncHandler";
 import jwt from "jsonwebtoken"
 import { User } from "../models/User.model";
 
-
 export const verifyJWT = AsyncHandler(async(req,_,
      next) => {
        try {
@@ -13,7 +12,7 @@ export const verifyJWT = AsyncHandler(async(req,_,
          }
         const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SCERET)
  
-     const user =    await User.findById(decodedToken?._id).select("-password -refreshToken")
+     const user =   await User.findById(decodedToken?._id).select("-password -refreshToken")
      if(!user){
          throw new ApiError(401, "Invalid access token ")
      }
